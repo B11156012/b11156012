@@ -1,8 +1,27 @@
 /* 全域 */
-*{
+
+* {
     box-sizing: border-box;
 }
-a{
+
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+    .news {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.news li {
+    flex-basis: 48%;
+    margin-bottom: 20px;
+}
+
+.news h2 {
+    color: rgba(0, 0, 0, 0.678);
+}
+
+a {
     display: block;
     width: 100%;
     line-height: 80px;
@@ -11,16 +30,23 @@ a{
     color: #3a3a3a;
 }
 
-img{ /*文章圖片*/
+img {
+    /*文章圖片*/
     max-width: 100%;
     vertical-align: middle;
 }
-.fas.fa-user-circle{
+
+.userAccount a:hover,
+.mainNav li:hover {
+    background-color: #09e3f3b0;
+}
+
+.fas.fa-user-circle {
     font-size: 5%;
     vertical-align: middle;
 }
 
-.fas.fa-bars{
+.fas.fa-bars {
     display: inline-block;
     width: 80px;
     line-height: 80px;
@@ -30,100 +56,122 @@ img{ /*文章圖片*/
     background-color: #04404b;
 }
 
-
-.headerNav{
-   background-color: #eae0d0;
-   height: 80px;
-   position: relative;
-}
-.headerNavShow{
+.headerNav {
     background-color: #eae0d0;
     height: 80px;
     position: relative;
 }
+
+.headerNavShow {
+    background-color: #eae0d0;
+    height: 80px;
+    position: relative;
+}
+
 .logo::after,
 .userAccount::after,
-.headerNav::after{
+.headerNav::after {
     content: '';
     clear: both;
 }
-#mobileMenu{
+
+#mobileMenu {
     position: absolute;
     top: 0;
     right: 0;
 }
-.mobileMenuBtn{
+
+.mobileMenuBtn {
     cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
 }
+
 .logo,
-.userAccount{
+.userAccount {
     width: 250px;
     padding: 0px 20px;
     text-align: center;
 }
-.logo{
+
+.logo {
     float: left;
 }
 
-.userAccount{
-   display: none;
+.userAccount {
+    display: none;
 }
+
 .logo::after,
-.userAccount::after{
+.userAccount::after {
     content: '';
     clear: both;
 }
-.mainNav{
+
+.mainNav {
     width: 100%;
     height: 100vh;
-    background:  #cebba2;
+    background: #cebba2;
     position: absolute;
     top: 80px;
     left: -100%;
     transition: .5s ease-in-out;
 }
-.mainNavShow{
+
+.mainNavShow {
     width: 100%;
     height: 100vh;
-    background:  #cebba2;
+    background: #cebba2;
     position: absolute;
     top: 80px;
     left: 0;
     transition: .5s ease-in-out;
 }
-.mainNav .navItem{
+
+.mainNav .navItem {
     text-align: center;
     border-bottom: 2px dashed gray;
 }
-.mainNav .navItem:first-child{
+
+.mainNav .navItem:first-child {
     background-color: #774b0d;
 }
-.mainNav .navItem:nth-child(2){
+
+.mainNav .navItem:first-child:hover {
+    background-color: #09e3f3b0;
+}
+
+.mainNav .navItem:nth-child(2) {
     background-color: #144210;
 }
+
+.mainNav .navItem:nth-child(2):hover {
+    background-color: #09e3f3b0;
+}
+
 .mainNav .navItem:first-child a,
-.mainNav .navItem:nth-child(2) a{
+.mainNav .navItem:nth-child(2) a {
     color: #fff;
 }
 
-#mobileMenu:checked ~ .headerNav .mainNav{
+#mobileMenu:checked~.headerNav .mainNav {
     left: 0;
 }
 
-.exercise{
+.exercise {
     position: relative;
 }
-.exercise:hover{
+
+.exercise:hover {
     background-color: #e4c58d;
 }
-.exercise:hover .exerciseList{
+
+.exercise:hover .exerciseList {
     display: block;
 }
 
-.exerciseList{
+.exerciseList {
     display: none;
     width: 100%;
     padding: 15px;
@@ -132,27 +180,33 @@ img{ /*文章圖片*/
     top: 100%;
     left: 0;
 }
-.exerciseList .exerciseForList{
+
+.exerciseList .exerciseForList {
     border: 2px dashed gray;
     background-color: #c08d76;
     margin-top: -2px;
 }
-.exerciseList .exerciseForList:hover{
+
+.exerciseList .exerciseForList:hover {
     background-color: #a09380;
 }
 
+.userAccount:hover {
+    background-color: #09e3f3b0;
+}
 
 
 /* XX-Large Device */
-@media(min-width: 1024px){
-    #mobileMenu{
-        visibility:hidden
+
+@media(min-width: 1024px) {
+    #mobileMenu {
+        visibility: hidden
     }
-    .mainNav{
+    .mainNav {
         background: #eae0d0;
         width: 70%;
         height: 80px;
-        top:0;
+        top: 0;
         left: 0;
         right: 0;
         margin: auto;
@@ -164,69 +218,58 @@ img{ /*文章圖片*/
             justify-content: flex-end; 
         */
     }
-    .mainNav .navItem{
+    .mainNav .navItem {
         display: inline-block;
         width: 120px;
         border-bottom: none;
-        
     }
-    .exerciseList .exerciseForList{
+    .exerciseList .exerciseForList {
         border: none;
         background-color: #bdb4a7;
         margin-top: 0px;
     }
-    
-    .exerciseList{
+    .exerciseList {
         width: 120px;
         padding: 0;
         background-color: #bdb4a7;
     }
-    .exerciseList .exerciseForList{
+    .exerciseList .exerciseForList {
         border-top: 2px dashed gray;
     }
-    .userAccount{
+    .userAccount {
         display: block;
         float: right;
         border-left: 2px dashed gray;
     }
-    .mobileMenuBtn{
+    .mobileMenuBtn {
         display: none;
         float: right;
-        
     }
-
-
-
     *,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
-/* img {
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+    /* img {
     max-width: 100%;
     height: auto;
     
 } */
-
-.clearfix:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
-body {
-    line-height: 1.6;
-}
-
-.wrap li {
-    flex: 0 0 25%;  /* 每行最多容納4個項目 */
-    box-sizing: border-box;
-    padding: 10px;
-    text-align: center;
-}
-
-    
+    .clearfix:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    body {
+        line-height: 1.6;
+    }
+    .wrap li {
+        flex: 0 0 25%;
+        /* 每行最多容納4個項目 */
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+    }
 }
 
 .wrap {
@@ -236,17 +279,17 @@ body {
 }
 
 .wrap ul {
-    display: flex;  /* 使用彈性盒子模型 */
-    flex-wrap: wrap;  /* 允許多行 */
+    display: flex;
+    /* 使用彈性盒子模型 */
+    flex-wrap: wrap;
+    /* 允許多行 */
     padding: 0;
     margin: 0;
     list-style: none;
 }
-
 
 h2 {
     font-size: 20px;
     font-weight: 600;
     padding-bottom: 1em;
 }
- 
